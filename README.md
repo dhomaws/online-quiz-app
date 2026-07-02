@@ -9,7 +9,7 @@ This is a web application I designed and developed as an academic project for th
 - **Quiz Page:** Interactive quizzes (minimum 3 questions per concept) that calculate and display the user's score using JavaScript.
 
 ## Project Files & Tech Stack:
-- `TMA.html`: For the website structure and layout.
-- `TMA.css`: For styling and designing the GUI.
-- `TMA.js`: Handles the quiz logic, score calculation, and interactivity.
+- `index.html`: For the website structure and layout.
+- `index.css`: For styling and designing the GUI.
+- `index.js`: Handles the quiz logic, score calculation, and interactivity.
 - `images/`: Folder containing all website assets and logos.
