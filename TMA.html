@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Java Learning Project</title>
+    <link rel="stylesheet" href="TMA.css" />
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo-area">
+            <img src="img/Java_Logo.png" alt="Java Logo" />
+            <h1>Java Learning Hub</h1>
+        </div>
+        <div class="nav-buttons">
+            <button onclick="goHome()">Home</button>
+            <button onclick="goLessons()">Lessons</button>
+            <button onclick="goExamples()">Examples</button>
+            <button onclick="goQuiz()">Quiz</button>
+        </div>
+    </div>
+
+    <div id="homePage" class="container">
+        <h2>Welcome to the Java Learning Platform</h2>
+        <fieldset class="box">
+            <legend>Our Vision &amp; Mission</legend>
+            <p>We aim to make Java programming simple and accessible for everyone.</p>
+            <p>Our mission is to provide a rich and user-friendly learning platform for Java enthusiasts. Whether you're
+                a beginner or an experienced developer, our resources are tailored to help you grow your skills and
+                knowledge.</p>
+            <p>Java is one of the most widely used programming languages globally, celebrated for its flexibility,
+                portability, and reliability. Mastering Java opens up endless opportunities in software development, web
+                applications, mobile apps, and enterprise solutions.</p>
+            <p>Our vision is to foster a collaborative community of learners who can share knowledge and grow together.
+                We believe learning should be engaging, interactive, and enjoyable. That's why we've included lessons,
+                examples, and quizzes to make your learning journey both fun and effective.</p>
+        </fieldset>
+
+        <div style="display: flex; gap: 20px;">
+            <fieldset class="box" style="flex: 1;">
+                <legend>About the Developer</legend>
+                <p><b>Name:</b> Abdulrahman Alalimi</p>
+                <p><b>ID:</b> 23513850</p>
+                <p><b>Hobbies:</b> Coding and exploring new technologies.</p>
+                <p><b>Goal:</b> To make programming enjoyable and accessible for everyone.</p>
+            </fieldset>
+
+            <fieldset class="box" style="flex: 1;">
+                <legend>Contact Information</legend>
+                <p><b>Email:</b> dhom.2r7@gmail.com</p>
+                <p><b>Phone:</b> 01157374564</p>
+            </fieldset>
+        </div>
+    </div>
+
+    <div id="lessonsPage" class="container" style="display:none;">
+        <h2>Choose a Topic to Learn</h2>
+
+        <div class="lessons-grid">
+
+            <div class="lesson-card" onclick="openLesson('l_input')">
+                <img src="img/input.png" alt="Input Icon" />
+                <h3>Input</h3>
+            </div>
+
+            <div class="lesson-card" onclick="openLesson('l_operators')">
+                <img src="img/arithmetic.png" alt="Operators Icon" />
+                <h3>Operators</h3>
+            </div>
+
+            <div class="lesson-card" onclick="openLesson('l_conditions')">
+                <img src="img/if-else.png" alt="Conditions Icon" />
+                <h3>Conditions</h3>
+            </div>
+
+            <div class="lesson-card" onclick="openLesson('l_loops')">
+                <img src="img/loop.png" alt="Loops Icon" />
+                <h3>Loops</h3>
+            </div>
+
+            <div class="lesson-card" onclick="openLesson('l_output')">
+                <img src="img/output.png" alt="Output Icon" />
+                <h3>Output</h3>
+            </div>
+
+        </div>
+
+        <hr />
+
+        <div id="l_input" class="lesson-content" style="display:none;">
+            <fieldset class="box">
+            <legend>Topic: User Input</legend>
+            <p>To receive input from the user, we use the <code>Scanner</code> class. This class is part of the
+                <code>java.util</code> package and allows us to read different types of input such as strings,
+                integers, and doubles.
+            </p>
+            <p>Steps to use the Scanner class:</p>
+            <ol>
+                <li>Import the Scanner class: <code>import java.util.Scanner;</code></li>
+                <li>Create a Scanner object: <code>Scanner sc = new Scanner(System.in);</code></li>
+                <li>Use methods like <code>nextLine()</code>, <code>nextInt()</code>, etc., to read input.</li>
+            </ol>
+            <div class="code-box">
+                <pre>
+    import java.util.Scanner;
+
+    public class InputExample {
+        public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter your name: ");
+        String name = sc.nextLine();
+        System.out.println("Hello, " + name + "!");
+        }
+    }
+                </pre>
+                <p><b>Output:</b> If the user enters "John", the output will be:</p>
+                <pre>
+    Enter your name: John
+    Hello, John!
+                </pre>
+            </div>
+            <p>The <code>Scanner</code> class provides several methods to read user input. Here are some
+                commonly used methods:</p>
+            <ul>
+                <li><b>nextInt():</b> Reads an integer value from the user. If the input is not an integer, it
+                throws an <code>InputMismatchException</code>.</li>
+                <li><b>next():</b> Reads a single word (up to the first whitespace) from the user input.</li>
+                <li><b>nextLine():</b> Reads an entire line of text, including spaces, until the user presses
+                Enter.</li>
+            </ul>
+            <p><b>Note:</b> When using <code>nextInt()</code> or <code>next()</code> followed by
+                <code>nextLine()</code>, you may encounter issues due to the newline character left in the input
+                buffer. To avoid this, use an extra <code>nextLine()</code> to consume the leftover newline.</p>
+
+            </fieldset>
+        </div>
+
+        <div id="l_operators" class="lesson-content" style="display:none;">
+            <fieldset class="box">
+            <legend>Topic: Basic Operators</legend>
+            <p>Operators in Java are symbols that perform operations on variables and values. Java supports the
+                following types of operators:</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Operator</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>+</td>
+                            <td>Arithmetic</td>
+                            <td>Addition</td>
+                            <td>5 + 3 = 8</td>
+                        </tr>
+                        <tr>
+                            <td>-</td>
+                            <td>Arithmetic</td>
+                            <td>Subtraction</td>
+                            <td>5 - 3 = 2</td>
+                        </tr>
+                        <tr>
+                            <td>*</td>
+                            <td>Arithmetic</td>
+                            <td>Multiplication</td>
+                            <td>5 * 3 = 15</td>
+                        </tr>
+                        <tr>
+                            <td>/</td>
+                            <td>Arithmetic</td>
+                            <td>Division</td>
+                            <td>6 / 3 = 2</td>
+                        </tr>
+                        <tr>
+                            <td>%</td>
+                            <td>Arithmetic</td>
+                            <td>Modulus</td>
+                            <td>5 % 3 = 2</td>
+                        </tr>
+                        <tr>
+                            <td>==</td>
+                            <td>Relational</td>
+                            <td>Equal to</td>
+                            <td>5 == 3 → false</td>
+                        </tr>
+                        <tr>
+                            <td>!=</td>
+                            <td>Relational</td>
+                            <td>Not equal to</td>
+                            <td>5 != 3 → true</td>
+                        </tr>
+                        <tr>
+                            <td>&gt;</td>
+                            <td>Relational</td>
+                            <td>Greater than</td>
+                            <td>5 &gt; 3 → true</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;</td>
+                            <td>Relational</td>
+                            <td>Less than</td>
+                            <td>5 &lt; 3 → false</td>
+                        </tr>
+                        <tr>
+                            <td>&gt;=</td>
+                            <td>Relational</td>
+                            <td>Greater than or equal to</td>
+                            <td>5 &gt;= 3 → true</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;=</td>
+                            <td>Relational</td>
+                            <td>Less than or equal to</td>
+                            <td>5 &lt;= 3 → false</td>
+                        </tr>
+                        <tr>
+                            <td>&&</td>
+                            <td>Logical</td>
+                            <td>Logical AND</td>
+                            <td>(5 &gt; 3) && (3 &gt; 1) → true</td>
+                        </tr>
+                        <tr>
+                            <td>||</td>
+                            <td>Logical</td>
+                            <td>Logical OR</td>
+                            <td>(5 &gt; 3) || (3 &lt; 1) → true</td>
+                        </tr>
+                        <tr>
+                            <td>!</td>
+                            <td>Logical</td>
+                            <td>Logical NOT</td>
+                            <td>!(5 &gt; 3) → false</td>
+                        </tr>
+                        <tr>
+                            <td>=</td>
+                            <td>Assignment</td>
+                            <td>Assign value</td>
+                            <td>x = 5</td>
+                        </tr>
+                        <tr>
+                            <td>+=</td>
+                            <td>Assignment</td>
+                            <td>Add and assign</td>
+                            <td>x += 3 → x = x + 3</td>
+                        </tr>
+                        <tr>
+                            <td>-=</td>
+                            <td>Assignment</td>
+                            <td>Subtract and assign</td>
+                            <td>x -= 3 → x = x - 3</td>
+                        </tr>
+                        <tr>
+                            <td>*=</td>
+                            <td>Assignment</td>
+                            <td>Multiply and assign</td>
+                            <td>x *= 3 → x = x * 3</td>
+                        </tr>
+                        <tr>
+                            <td>/=</td>
+                            <td>Assignment</td>
+                            <td>Divide and assign</td>
+                            <td>x /= 3 → x = x / 3</td>
+                        </tr>
+                    </tbody>
+                </table>
+            <p>Example of arithmetic operations:</p>
+            <div class="code-box">
+                <pre>
+    public class OperatorsExample {
+        public static void main(String[] args) {
+        int a = 10, b = 5;
+        System.out.println("Addition: " + (a + b));
+        System.out.println("Multiplication: " + (a * b));
+        System.out.println("Division: " + (a / b));
+        }
+    }
+                </pre>
+                <p><b>Output:</b></p>
+                <pre>
+    Addition: 15
+    Multiplication: 50
+    Division: 2
+                </pre>
+            </div>
+            </fieldset>
+        </div>
+
+        <div id="l_conditions" class="lesson-content" style="display:none;">
+            <fieldset class="box">
+            <legend>Topic: Conditional Statements</legend>
+            <p>Conditional statements allow you to execute a block of code based on a condition. The most common
+                conditional statements in Java are:</p>
+            <ul>
+                <li><b>if:</b> Executes a block of code if the condition is true.</li>
+                <li><b>if-else:</b> Executes one block of code if the condition is true, and another if it is false.
+                </li>
+            </ul>
+            <p>Example of an if-else statement:</p>
+            <div class="code-box">
+                <pre>
+    public class ConditionExample {
+        public static void main(String[] args) {
+        int age = 20;
+        if (age >= 18) {
+            System.out.println("You are an adult.");
+        } else {
+            System.out.println("You are a minor.");
+        }
+        }
+    }
+                </pre>
+                <p><b>Output:</b></p>
+                <pre>
+    You are an adult.
+                </pre>
+            </div>
+            </fieldset>
+        </div>
+
+        <div id="l_loops" class="lesson-content" style="display:none;">
+            <fieldset class="box">
+            <legend>Topic: Loops</legend>
+            <p>Loops are used to execute a block of code repeatedly as long as a condition is true. Java provides
+            three types of loops:</p>
+            <ul>
+            <li><b>for:</b> Used when the number of iterations is known.</li>
+            </ul>
+            <p>Example of a for loop:</p>
+            <div class="code-box">
+            <pre>
+    public class LoopExample {
+        public static void main(String[] args) {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Iteration: " + i);
+        }
+        }
+    }
+            </pre>
+            <p><b>Output:</b></p>
+            <pre>
+    Iteration: 1
+    Iteration: 2
+    Iteration: 3
+    Iteration: 4
+    Iteration: 5
+            </pre>
+            </div>
+            </fieldset>
+        </div>
+
+        <div id="l_output" class="lesson-content" style="display:none;">
+            <fieldset class="box">
+            <legend>Topic: Output</legend>
+            <p>In Java, the <code>System.out.println()</code> method is used to print text to the console. It
+            automatically moves the cursor to the next line after printing.</p>
+            <p>Example:</p>
+            <div class="code-box">
+            <pre>
+    public class OutputExample {
+        public static void main(String[] args) {
+        System.out.print("Hello ");
+        System.out.println("World!");
+        System.out.printf("My name is %s and I am %d years old.", "John", 25);
+        }
+    }
+            </pre>
+            <p><b>Output:</b></p>
+            <pre>
+    Hello World!
+    My name is John and I am 25 years old.
+            </pre>
+            </div>
+            </fieldset>
+        </div>
+    </div>
+
+
+    <div id="examplesPage" class="container" style="display:none;">
+        <h2>Java Code Examples</h2>
+
+        <div class="lessons-grid">
+
+            <div class="lesson-card" onclick="openExample('e_input')">
+                <img src="img/input.png" alt="Input Icon" />
+                <h3>Input</h3>
+            </div>
+
+            <div class="lesson-card" onclick="openExample('e_operators')">
+                <img src="img/arithmetic.png" alt="Operators Icon" />
+                <h3>Operators</h3>
+            </div>
+
+            <div class="lesson-card" onclick="openExample('e_conditions')">
+                <img src="img/if-else.png" alt="Conditions Icon" />
+                <h3>Conditions</h3>
+            </div>
+
+            <div class="lesson-card" onclick="openExample('e_loop')">
+                <img src="img/loop.png" alt="Loops Icon" />
+                <h3>Loops</h3>
+            </div>
+
+            <div class="lesson-card" onclick="openExample('e_output')">
+                <img src="img/output.png" alt="Output Icon" />
+                <h3>Output</h3>
+            </div>
+        </div>
+
+        <hr />
+
+        <div id="e_input" class="example-content" style="display:none;">
+            <fieldset class="box">
+                <legend>Input Examples</legend>
+                <div class="code-box">
+                    <h3>Example 1: Input String</h3>
+                    <p>Scanner s = new Scanner(System.in); <br /> String name = s.nextLine();</p>
+                    <p><b>Output:</b> If the user enters "John", the output will be:</p>
+                    <pre>
+    John
+                    </pre>
+                </div>
+                <div class="code-box">
+                    <h3>Example 2: Input Integer</h3>
+                    <p>Scanner s = new Scanner(System.in); <br /> int number = s.nextInt();</p>
+                    <p><b>Output:</b> If the user enters "25", the output will be:</p>
+                    <pre>
+    25
+                    </pre>
+                </div>
+            </fieldset>
+        </div>
+
+        <div id="e_operators" class="example-content" style="display:none;">
+            <fieldset class="box">
+                <legend>Operator Examples</legend>
+                <div class="code-box">
+                    <h3>Example 1: Add Numbers</h3>
+                    <p>int x = 5 + 10; <br /> System.out.println(x);</p>
+                    <p><b>Output:</b></p>
+                    <pre>
+    15
+                    </pre>
+                </div>
+                <div class="code-box">
+                    <h3>Example 2: Multiply</h3>
+                    <p>int x = 5 * 3; <br /> System.out.println(x);</p>
+                    <p><b>Output:</b></p>
+                    <pre>
+    15
+                    </pre>
+                </div>
+            </fieldset>
+        </div>
+
+        <div id="e_conditions" class="example-content" style="display:none;">
+            <fieldset class="box">
+                <legend>Condition Examples</legend>
+                <div class="code-box">
+                    <h3>Example 1: If Statement</h3>
+                    <p>if(x > 10) {<br /> System.out.println("Big"); <br />}</p>
+                    <p><b>Output:</b> If x = 15:</p>
+                    <pre>
+    Big
+                    </pre>
+                </div>
+                <div class="code-box">
+                    <h3>Example 2: If-Else</h3>
+                    <p>if(x > 10) { <br />System.out.println("Big"); <br />} else {<br /> System.out.println("Small");<br /> }</p>
+                    <p><b>Output:</b> If x = 5:</p>
+                    <pre>
+    Small
+                    </pre>
+                </div>
+            </fieldset>
+        </div>
+
+        <div id="e_loop" class="example-content" style="display:none;">
+            <fieldset class="box">
+                <legend>Loop Examples</legend>
+                <div class="code-box">
+                    <h3>Ex 1: For Loop</h3>
+                    <p>for(int i=0; i &lt; 5; i++) { <br />System.out.println(i);<br /> }</p>
+                    <p><b>Output:</b></p>
+                    <pre>
+    0
+    1
+    2
+    3
+    4
+                    </pre>
+                </div>
+                <div class="code-box">
+                    <h3>Ex 2: While Loop</h3>
+                    <p>int i = 0; <br /> while(i &lt; 5) { <br /> System.out.println(i);<br /> i++;<br /> }</p>
+                    <p><b>Output:</b></p>
+                    <pre>
+    0
+    1
+    2
+    3
+    4
+                    </pre>
+                </div>
+            </fieldset>
+        </div>
+
+        <div id="e_output" class="example-content" style="display:none;">
+            <fieldset class="box">
+            <legend>Output Examples</legend>
+            <div class="code-box">
+                <h3>Ex 1: Print Name</h3>
+                <p>System.out.println("My name is Abdulrahman");</p>
+                <p><b>Output:</b></p>
+                <pre>
+        My name is Abdulrahman
+                </pre>
+            </div>
+            <div class="code-box">
+                <h3>Ex 2: Print Sum</h3>
+                <p>System.out.println("The sum is: " + (5 + 10));</p>
+                <p><b>Output:</b></p>
+                <pre>
+        The sum is: 15
+                </pre>
+            </div>
+            <div class="code-box">
+                <h3>Ex 3: Print Formatted Output</h3>
+                <p>System.out.printf("Name: %s, Age: %d", "John", 25);</p>
+                <p><b>Output:</b></p>
+                <pre>
+        Name: John, Age: 25
+                </pre>
+            </div>
+            </fieldset>
+        </div>
+    </div>
+
+    <div id="quizPage" class="container" style="display:none;">
+        <h2>Java Quiz (15 Questions)</h2>
+        <fieldset class="box">
+            <legend>Test Yourself</legend>
+
+            <h3 style="color:#12486b; border-bottom:1px solid #eee; padding-bottom:5px;">Topic: Input</h3>
+            <p><b>1. Which class is used for user input?</b></p>
+            <label><input type="radio" name="q1" value="1" /> Scanner</label><br />
+            <label><input type="radio" name="q1" value="0" /> Printer</label>
+
+            <p><b>2. Scanner class is in which package?</b></p>
+            <label><input type="radio" name="q2" value="1" /> java.util</label><br />
+            <label><input type="radio" name="q2" value="0" /> java.io</label>
+
+            <p><b>3. Method to read an integer value?</b></p>
+            <label><input type="radio" name="q3" value="0" /> nextLine()</label><br />
+            <label><input type="radio" name="q3" value="1" /> nextInt()</label>
+            <hr />
+
+            <h3 style="color:#12486b; border-bottom:1px solid #eee; padding-bottom:5px;">Topic: Operators</h3>
+            <p><b>4. Symbol for multiplication?</b></p>
+            <label><input type="radio" name="q4" value="1" /> *</label><br />
+            <label><input type="radio" name="q4" value="0" /> x</label>
+
+            <p><b>5. Result of 10 % 3?</b></p>
+            <label><input type="radio" name="q5" value="1" /> 1</label><br />
+            <label><input type="radio" name="q5" value="0" /> 3</label>
+
+            <p><b>6. What does "++" operator do?</b></p>
+            <label><input type="radio" name="q6" value="1" /> Increment by 1</label><br />
+            <label><input type="radio" name="q6" value="0" /> Decrement by 1</label>
+            <hr />
+
+            <h3 style="color:#12486b; border-bottom:1px solid #eee; padding-bottom:5px;">Topic: Conditions</h3>
+            <p><b>7. Operator to check equality?</b></p>
+            <label><input type="radio" name="q7" value="1" /> ==</label><br />
+            <label><input type="radio" name="q7" value="0" /> =</label>
+
+            <p><b>8. Statement executed if 'if' is false?</b></p>
+            <label><input type="radio" name="q8" value="1" /> else</label><br />
+            <label><input type="radio" name="q8" value="0" /> then</label>
+
+            <p><b>9. Symbol for "Not Equal"?</b></p>
+            <label><input type="radio" name="q9" value="1" /> !=</label><br />
+            <label><input type="radio" name="q9" value="0" />
+                &lt;&gt;
+            </label>
+            <hr />
+
+            <h3 style="color:#12486b; border-bottom:1px solid #eee; padding-bottom:5px;">Topic: Loops</h3>
+            <p><b>10. Loop used when iterations are known?</b></p>
+            <label><input type="radio" name="q10" value="1" /> for</label><br />
+            <label><input type="radio" name="q10" value="0" /> while</label>
+
+            <p><b>11. Command to stop a loop?</b></p>
+            <label><input type="radio" name="q11" value="1" /> break</label><br />
+            <label><input type="radio" name="q11" value="0" /> stop</label>
+
+            <p><b>12. Loop that executes at least once?</b></p>
+            <label><input type="radio" name="q12" value="1" /> do-while</label><br />
+            <label><input type="radio" name="q12" value="0" /> for</label>
+            <hr />
+
+            <h3 style="color:#12486b; border-bottom:1px solid #eee; padding-bottom:5px;">Topic: Output</h3>
+            <p><b>13. Print and move to new line?</b></p>
+            <label><input type="radio" name="q13" value="1" /> println()</label><br />
+            <label><input type="radio" name="q13" value="0" /> print()</label>
+            <hr />
+
+            <p><b>14. Symbol to concatenate strings?</b></p>
+            <label><input type="radio" name="q14" value="1" /> +</label><br />
+            <label><input type="radio" name="q14" value="0" /> &</label>
+            <hr />
+
+            <p><b>15. Correct code to print?</b></p>
+            <label><input type="radio" name="q15" value="1" /> System.out.println()</label><br />
+            <label><input type="radio" name="q15" value="0" /> Console.log()</label>
+
+            <br /><br />
+            <button class="action-btn" onclick="checkAnswers()"><b>Get Score</b></button>
+            <h3 id="myScore" style="color: #2c3e50;"></h3>
+        </fieldset>
+    </div>
+
+    <script src="TMA.js"></script>
+</body>
+
+</html>
